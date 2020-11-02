@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6^-v*!v!$di)$1cay+&ff_w$v)$*0619mi12)*9(615*5kve6s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['o-blog-api.herokuapp.com', 'localhost:8000', '127.0.0.1:8000']
 
