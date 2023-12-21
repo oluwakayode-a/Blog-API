@@ -16,7 +16,7 @@ services:
       - djangonetwork
 
   db:
-    image: postgres:12
+    image: postgres
     ports:
       - "5432:5432"
     environment:
