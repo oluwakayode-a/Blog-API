@@ -18,4 +18,6 @@ COPY . /app/
 
 RUN python manage.py collectstatic --noinput
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "blog_api.wsgi:application"]
+RUN python manage.py migrate
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "<your_project_name>.wsgi:application"]
