@@ -3,8 +3,6 @@ from . import serializers
 from rest_framework import generics, status
 from rest_framework.response import Response
 
-# Create your views here.
-
 
 class PostListAPIView(generics.ListAPIView):
     queryset = Post.objects.all().order_by('-id')
@@ -57,8 +55,7 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def delete(self, request, *args, **kwargs):
         super(PostDetailView, self).delete(request, *args, **kwargs)
-        # instance = self.get_object()
-        # serializer = self.get_serializer(instance)
+        
         data = serializer.data
 
         response = {

@@ -6,6 +6,7 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = ('name', 'text', 'created', 'post')
         
+        
 
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, required=False)
