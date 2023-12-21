@@ -10,6 +10,8 @@ services:
       SECRET_KEY: ${SECRET_KEY}
     depends_on:
       - db
+    networks:
+      - djangonetwork
 
   db:
     image: postgres:12
@@ -17,6 +19,8 @@ services:
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - djangonetwork
 
   nginx:
     image: nginx:latest
@@ -32,3 +36,8 @@ services:
 volumes:
   static_volume:
   media_volume:
+
+
+networks:
+  djangonetwork:
+    driver: bridge
