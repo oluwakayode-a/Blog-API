@@ -10,6 +10,8 @@ services:
       SECRET_KEY: ${SECRET_KEY}
     depends_on:
       - db
+    links:
+      - db:db
     networks:
       - djangonetwork
 
